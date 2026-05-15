@@ -1,0 +1,221 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <title>AGV Motor Control Subsystem</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+      body,h1,h2,h3,h4,h5,h6 {
+        font-family: "Raleway", sans-serif;
+      }
+
+      .project-hero {
+        padding-top: 48px;
+        padding-bottom: 32px;
+      }
+
+      .project-image {
+        width: 100%;
+        border-radius: 12px;
+      }
+
+      .section-card {
+        margin-bottom: 24px;
+      }
+
+      .back-link {
+        text-decoration: none;
+      }
+
+      .mode-toggle {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 9999;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .dark-mode {
+        background-color: #121212 !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-light-grey {
+        background-color: #121212 !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-white {
+        background-color: #1e1e1e !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-container {
+        color: white;
+      }
+
+      .dark-mode .w3-grey {
+        background-color: #333 !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-dark-grey {
+        background-color: #222 !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-button {
+        color: white !important;
+      }
+
+      .dark-mode a {
+        color: white;
+      }
+    </style>
+  </head>
+
+<body class="w3-light-grey w3-content" style="max-width:1200px">
+
+<!-- Light/Dark Mode Icon -->
+<button onclick="toggleDarkMode()" class="w3-button w3-blue-grey mode-toggle">
+  <i class="fa fa-moon-o"></i>
+</button>
+
+<!-- Header -->
+<header class="w3-container project-hero">
+  <a href="index.html" class="back-link w3-text-teal">
+    <i class="fa fa-arrow-left w3-margin-right"></i>Back to Portfolio
+  </a>
+
+  <h1><b>Autonomous Ground Vehicle Motor Control Subsystem</b></h1>
+  <p class="w3-large">
+    Senior Design project focused on real-time speed control, embedded firmware, and custom PCB design for a differential-drive autonomous ground vehicle.
+  </p>
+</header>
+
+<!-- Main Project Image -->
+<div class="w3-container">
+  <img src="MotorControlSubHardware.jpg" alt="AGV Motor Control Hardware" class="project-image">
+</div>
+
+<br>
+
+<!-- What Section -->
+<div class="w3-container section-card">
+  <div class="w3-white w3-padding-large w3-card">
+    <h2><b>What</b></h2>
+    <p>
+      I collaborated with a team of 10 electrical engineers to develop a differential-drive autonomous ground vehicle for Senior Design. My primary responsibility was the development of the Motor Control Subsystem, which controlled the left and right drive motors of the vehicle.
+    </p>
+    <p>
+      The goal of this subsystem was to convert high-level velocity commands into stable wheel motion using real-time embedded control. This required combining control theory, embedded software, PCB design, and system integration.
+    </p>
+  </div>
+</div>
+
+<!-- How Section -->
+<div class="w3-container section-card">
+  <div class="w3-white w3-padding-large w3-card">
+    <h2><b>How</b></h2>
+
+    <p>
+      I modeled the brushed DC motors and designed discrete PI speed-control loops in Simulink. These controllers were used to regulate motor velocity using encoder feedback.
+    </p>
+
+    <p>
+      I then developed real-time embedded C firmware on an ARM microcontroller to implement the discrete controller. The firmware handled motor command processing, PWM output, direction control, and feedback from quadrature encoders.
+    </p>
+
+    <p>
+      I also designed a custom 2-layer Motor Control PCB in KiCad to organize the motor control hardware and simplify system integration. The PCB helped connect the microcontroller, motor drivers, encoder signals, and supporting hardware in a cleaner and more reliable layout.
+    </p>
+
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-margin-bottom">
+        <img src="MotorControlBoard.jpg" alt="Motor Control PCB" class="project-image">
+      </div>
+      <div class="w3-half w3-margin-bottom">
+        <img src="MotorControlSubHardware.jpg" alt="Motor Control Subsystem Hardware" class="project-image">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Results Section -->
+<div class="w3-container section-card">
+  <div class="w3-white w3-padding-large w3-card">
+    <h2><b>Results</b></h2>
+
+    <p>
+      The motor control subsystem met the target performance specifications for both the left and right motors. The system achieved less than 1 second rise time, less than 3 seconds settling time, and less than 10% overshoot.
+    </p>
+
+    <p>
+      The plots below show the measured motor velocity response compared to the commanded setpoint. The measured velocity tracks the 2500 ticks/s setpoint for both motors, demonstrating closed-loop speed regulation.
+    </p>
+
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-margin-bottom">
+        <img src="Motor1_Step.jpg" alt="Right Motor Step Response" class="project-image">
+        <p><b>Right Motor Step Response:</b> Measured velocity response tracking a 2500 ticks/s setpoint.</p>
+      </div>
+
+      <div class="w3-half w3-margin-bottom">
+        <img src="Motor2_Step.jpg" alt="Left Motor Step Response" class="project-image">
+        <p><b>Left Motor Step Response:</b> Measured velocity response tracking a 2500 ticks/s setpoint.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Takeaway Section -->
+<div class="w3-container section-card">
+  <div class="w3-white w3-padding-large w3-card">
+    <h2><b>Engineering Takeaways</b></h2>
+    <p>
+      This project strengthened my experience in embedded control systems, real-time firmware, motor feedback, PCB design, and practical system integration. It also showed me the importance of validating control theory on physical hardware, where noise, wiring, timing, and mechanical effects all influence system behavior.
+    </p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-dark-grey">
+  <p>&copy; 2026 Gianlorenzo Cavallo. All rights reserved.</p>
+</footer>
+
+<div class="w3-black w3-center w3-padding-24">
+  Built with <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-opacity">W3.CSS</a> and hosted on GitHub Pages.
+</div>
+
+<script>
+  function applyDarkModePreference() {
+  if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark-mode");
+  }
+}
+
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+
+  if (document.body.classList.contains("dark-mode")) {
+    localStorage.setItem("darkMode", "enabled");
+  } else {
+    localStorage.setItem("darkMode", "disabled");
+  }
+}
+
+applyDarkModePreference();
+</script>
+
+</body>
+</html>

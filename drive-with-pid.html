@@ -1,0 +1,215 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <title>Drive with PID Control</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+      body,h1,h2,h3,h4,h5,h6 {
+        font-family: "Raleway", sans-serif;
+      }
+
+      .project-hero {
+        padding-top: 48px;
+        padding-bottom: 32px;
+      }
+
+      .project-image {
+        width: 100%;
+        border-radius: 12px;
+      }
+
+      .section-card {
+        margin-bottom: 24px;
+      }
+
+      .back-link {
+        text-decoration: none;
+      }
+
+      .mode-toggle {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 9999;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .dark-mode {
+        background-color: #121212 !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-light-grey {
+        background-color: #121212 !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-white {
+        background-color: #1e1e1e !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-container {
+        color: white;
+      }
+
+      .dark-mode .w3-grey {
+        background-color: #333 !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-dark-grey {
+        background-color: #222 !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-button {
+        color: white !important;
+      }
+
+      .dark-mode a {
+        color: white;
+      }
+    </style>
+  </head>
+
+<body class="w3-light-grey w3-content" style="max-width:1200px">
+
+<!-- Light/Dark Mode Icon -->
+<button onclick="toggleDarkMode()" class="w3-button w3-blue-grey mode-toggle">
+  <i class="fa fa-moon-o"></i>
+</button>
+
+<!-- Header -->
+<header class="w3-container project-hero">
+  <a href="index.html" class="back-link w3-text-teal">
+    <i class="fa fa-arrow-left w3-margin-right"></i>Back to Portfolio
+  </a>
+
+  <h1><b>Drive with PID Control</b></h1>
+  <p class="w3-large">
+    Academic mobile robotics project focused on using discrete PID control to reduce heading deviation using independent motor control.
+  </p>
+</header>
+
+<!-- Main Project Image -->
+<div class="w3-container">
+    <img src="DriveWithPID_Control.JPG" alt="Drive with PID Cover Image" class="project-image">
+</div>
+
+<br>
+
+<!-- What Section -->
+<div class="w3-container section-card">
+  <div class="w3-white w3-padding-large w3-card">
+    <h2><b>What</b></h2>
+    <p>
+      I assembled a 4-wheeled mobile robot and simulated a discrete PID controller in Simulink to reduce heading deviation in the robot using independent motor control.
+    </p>
+
+    <p>
+      The objective was to compare open-loop and closed-loop driving behavior and show how feedback control could improve the robot's ability to travel in a straighter path.
+    </p>
+  </div>
+</div>
+
+<!-- How Section -->
+<div class="w3-container section-card">
+  <div class="w3-white w3-padding-large w3-card">
+    <h2><b>How</b></h2>
+
+    <p>
+      I designed a closed-loop PID control structure in Simulink. The controller used the robot's desired speed, turn angle, and rotation difference to dynamically adjust the left and right wheel speeds.
+    </p>
+
+    <p>
+      I then implemented the discrete PID velocity controller on an Arduino Mega 2560. The controller adjusted motor power based on wheel rotation feedback, allowing the robot to correct heading error during motion.
+    </p>
+
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-margin-bottom">
+        <img src="DriveWithPIDSimulink.jpg" alt="Drive with PID Simulink Model" class="project-image">
+        <p><b>Simulink Model:</b> Closed-loop PID control architecture for independent wheel-speed control.</p>
+      </div>
+
+      <div class="w3-half w3-margin-bottom">
+        <img src="DriveWithPIDTopView.jpg" alt="Drive with PID Robot Hardware" class="project-image">
+        <p><b>Robot Hardware:</b> Four-wheeled mobile robot assembled with an Arduino Mega 2560, motor driver hardware, and wheel feedback wiring.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Results Section -->
+<div class="w3-container section-card">
+  <div class="w3-white w3-padding-large w3-card">
+    <h2><b>Results</b></h2>
+
+    <p>
+      The vehicle traveled approximately 20 feet from start to end. The open-loop trajectory showed a curved path, indicating heading deviation, while the closed-loop trajectory remained nearly straight.
+    </p>
+
+    <p>
+      This demonstrated that the PID controller improved the robot's ability to maintain a straighter path by correcting heading error through feedback.
+    </p>
+
+    <img src="DriveWithPIDResults.jpg" alt="Drive with PID Experimental Results" class="project-image">
+    <p>
+      <b>Experimental Result:</b> The green dashed path shows the open-loop trajectory, while the blue dashed path shows the improved closed-loop trajectory.
+    </p>
+  </div>
+</div>
+
+<!-- Takeaway Section -->
+<div class="w3-container section-card">
+  <div class="w3-white w3-padding-large w3-card">
+    <h2><b>Engineering Takeaways</b></h2>
+
+    <p>
+      This project helped me connect simulation-based controller design with physical embedded implementation. It reinforced the importance of feedback, sensor measurements, tuning, and experimental validation when applying PID control to mobile robotic systems.
+    </p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-dark-grey">
+  <p>&copy; 2026 Gianlorenzo Cavallo. All rights reserved.</p>
+</footer>
+
+<div class="w3-black w3-center w3-padding-24">
+  Built with <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-opacity">W3.CSS</a> and hosted on GitHub Pages.
+</div>
+
+<script>
+  function applyDarkModePreference() {
+  if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark-mode");
+  }
+}
+
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+
+  if (document.body.classList.contains("dark-mode")) {
+    localStorage.setItem("darkMode", "enabled");
+  } else {
+    localStorage.setItem("darkMode", "disabled");
+  }
+}
+
+applyDarkModePreference();
+</script>
+
+</body>
+</html>

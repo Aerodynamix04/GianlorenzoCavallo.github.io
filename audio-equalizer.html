@@ -1,0 +1,203 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <title>3-Band Audio Equalizer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+      body,h1,h2,h3,h4,h5,h6 {
+        font-family: "Raleway", sans-serif;
+      }
+
+      .project-hero {
+        padding-top: 48px;
+        padding-bottom: 32px;
+      }
+
+      .project-image {
+        width: 100%;
+        border-radius: 12px;
+      }
+
+      .section-card {
+        margin-bottom: 24px;
+      }
+
+      .back-link {
+        text-decoration: none;
+      }
+
+      .mode-toggle {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 9999;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .dark-mode {
+        background-color: #121212 !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-light-grey {
+        background-color: #121212 !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-white {
+        background-color: #1e1e1e !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-container {
+        color: white;
+      }
+
+      .dark-mode .w3-grey {
+        background-color: #333 !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-dark-grey {
+        background-color: #222 !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-button {
+        color: white !important;
+      }
+
+      .dark-mode a {
+        color: white;
+      }
+    </style>
+  </head>
+
+<body class="w3-light-grey w3-content" style="max-width:1200px">
+
+<!-- Light/Dark Mode Icon -->
+<button onclick="toggleDarkMode()" class="w3-button w3-blue-grey mode-toggle">
+  <i class="fa fa-moon-o"></i>
+</button>
+
+<!-- Header -->
+<header class="w3-container project-hero">
+  <a href="index.html" class="back-link w3-text-teal">
+    <i class="fa fa-arrow-left w3-margin-right"></i>Back to Portfolio
+  </a>
+
+  <h1><b>3-Band Audio Equalizer</b></h1>
+  <p class="w3-large">
+    Academic electronics project focused on designing, simulating, and building an active-filter audio equalizer for bass, midrange, and treble control.
+  </p>
+</header>
+
+<!-- Main Cover Image -->
+<div class="w3-container">
+    <img src="3_Band_AudioEQ.jpg" alt="3-Band Audio Equalizer Breadboard" class="project-image">
+</div>
+
+<br>
+
+<!-- What Section -->
+<div class="w3-container section-card">
+  <div class="w3-white w3-padding-large w3-card">
+    <h2><b>What</b></h2>
+    <p>
+      I simulated a three-band audio equalizer in Multisim using op-amp-based active filters. The purpose of the circuit was to allow control over bass, midrange, and treble frequency bands.
+    </p>
+
+    <p>
+      This project connected circuit theory, frequency response, filtering, and practical audio electronics. The equalizer was designed so each band could shape a different part of the audio spectrum.
+    </p>
+  </div>
+</div>
+
+<!-- How Section -->
+<div class="w3-container section-card">
+  <div class="w3-white w3-padding-large w3-card">
+    <h2><b>How</b></h2>
+
+    <p>
+      I created the equalizer circuit in Multisim and verified the individual filter stages using AC sweep analysis. This allowed me to check the expected frequency response for the bass, midrange, and treble bands before building the circuit physically.
+    </p>
+
+    <p>
+      After simulation, I built the circuit on a breadboard using op-amp-based active filters and potentiometers for user adjustment. The breadboard implementation allowed me to test the circuit with real audio signals and evaluate how each band affected the sound.
+    </p>
+
+    <img src="AudioEQMultisim.jpg" alt="Audio Equalizer Multisim Circuit" class="project-image">
+    <p>
+      <b>Multisim Design:</b> Active-filter equalizer schematic used to simulate and verify frequency response before hardware testing.
+    </p>
+  </div>
+</div>
+
+<!-- Results Section -->
+<div class="w3-container section-card">
+  <div class="w3-white w3-padding-large w3-card">
+    <h2><b>Results</b></h2>
+
+    <p>
+      The equalizer was built and evaluated on a breadboard using op-amp-based active filters for bass, midrange, and treble control. The circuit achieved clear tonal separation across the frequency bands.
+    </p>
+
+    <p>
+      The final performance was confirmed through listening tests using different genres of music. Adjusting the controls produced noticeable changes in the low, middle, and high frequency ranges, demonstrating that the equalizer successfully shaped the audio signal.
+    </p>
+  </div>
+</div>
+
+<!-- Takeaway Section -->
+<div class="w3-container section-card">
+  <div class="w3-white w3-padding-large w3-card">
+    <h2><b>Engineering Takeaways</b></h2>
+
+    <p>
+      This project strengthened my understanding of active filters, op-amp circuits, frequency-domain analysis, and practical analog circuit construction. It also showed the importance of comparing simulation results with real hardware behavior when building audio electronics.
+    </p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-dark-grey">
+  <p>&copy; 2026 Gianlorenzo Cavallo. All rights reserved.</p>
+</footer>
+
+<div class="w3-black w3-center w3-padding-24">
+  Built with <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-opacity">W3.CSS</a> and hosted on GitHub Pages.
+</div>
+
+<script>
+  function applyDarkModePreference() {
+  if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark-mode");
+  }
+}
+
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+
+  if (document.body.classList.contains("dark-mode")) {
+    localStorage.setItem("darkMode", "enabled");
+  } else {
+    localStorage.setItem("darkMode", "disabled");
+  }
+}
+
+applyDarkModePreference();
+</script>
+
+</body>
+</html>

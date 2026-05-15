@@ -1,62 +1,149 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>W3.CSS Template</title>
+    <title>Gianlorenzo Cavallo Portfolio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
-    body,h1,h2,h3,h4,h5,h6 {
-      font-family: "Raleway", sans-serif;
-    }
+      body,h1,h2,h3,h4,h5,h6 {
+        font-family: "Raleway", sans-serif;
+      }
 
-    .slideshow-container {
-      max-width: 100%;
-      position: relative;
-      margin: auto;
-    }
+      .project-link {
+        text-decoration: none;
+        color: inherit;
+      }
 
-    .mySlides {
-      display: none;
-    }
+      .project-card {
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
 
-    .fade {
-      animation-name: fade;
-      animation-duration: 1.5s;
-    }
+      .project-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      }
 
-    @keyframes fade {
-      from {opacity: 0.4}
-      to {opacity: 1}
-    }
+      .slideshow-container {
+        max-width: 100%;
+        position: relative;
+        margin: auto;
+      }
 
-    .numbertext {
-      color: white;
-      font-size: 12px;
-      padding: 8px 12px;
-      position: absolute;
-      top: 0;
-      background-color: rgba(0,0,0,0.4);
-      border-radius: 8px;
-    }
+      .mySlides {
+        display: none;
+      }
 
-    .dot {
-      height: 12px;
-      width: 12px;
-      margin: 0 3px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-    }
+      .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
 
-    .active {
-      background-color: #717171;
-    }
+      @keyframes fade {
+        from {opacity: 0.4}
+        to {opacity: 1}
+      }
+
+      .numbertext {
+        color: white;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+        background-color: rgba(0,0,0,0.4);
+        border-radius: 8px;
+      }
+
+      .dot {
+        height: 12px;
+        width: 12px;
+        margin: 0 3px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      .active {
+        background-color: #717171;
+      }
+
+      .mode-toggle {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 9999;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .email-link {
+        color: inherit;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .email-link:hover {
+        text-decoration: underline;
+      }
+
+      .dark-mode {
+        background-color: #121212 !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-light-grey {
+        background-color: #121212 !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-white {
+        background-color: #1e1e1e !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-container {
+        color: white;
+      }
+
+      .dark-mode .w3-grey {
+        background-color: #333 !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-dark-grey {
+        background-color: #222 !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-sidebar {
+        background-color: #1e1e1e !important;
+        color: white !important;
+      }
+
+      .dark-mode .w3-button {
+        color: white !important;
+      }
+
+      .dark-mode a {
+        color: white;
+      }
     </style>
   </head>
+
 <body class="w3-light-grey w3-content" style="max-width:1600px">
+
+<!-- Light/Dark Mode Icon -->
+<button onclick="toggleDarkMode()" class="w3-button w3-blue-grey mode-toggle">
+  <i class="fa fa-moon-o"></i>
+</button>
 
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
@@ -67,74 +154,95 @@
     <img src="portfolio.jpg" style="width:45%;" class="w3-round"><br><br>
     <h4><b>Gianlorenzo Cavallo</b></h4>
   </div>
+
   <div class="w3-bar-block">
-    <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a> 
-    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a> 
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
+    <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal">
+      <i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO
+    </a> 
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding">
+      <i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT
+    </a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding">
+      <i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT
+    </a>
   </div>
+
   <div class="w3-panel w3-large">
-  <a href="https://www.linkedin.com/in/gianlorenzo-cavallo/" target="_blank">
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-  </a>
+    <a href="https://www.linkedin.com/in/gianlorenzo-cavallo/" target="_blank">
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </a>
   </div>
 </nav>
 
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-<!-- !PAGE CONTENT! -->
+<!-- Page Content -->
 <div class="w3-main" style="margin-left:300px">
 
   <!-- Header -->
   <header id="portfolio">
-    <a href="#"><img src="portfolio.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
-    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <a href="#">
+      <img src="portfolio.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity">
+    </a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </span>
     <div class="w3-container">
-    <h1><b>My Portfolio</b></h1>
+      <h1><b>My Portfolio</b></h1>
     </div>
   </header>
-  
 
-<!-- First Photo Grid-->
-<div class="w3-row-padding">
+    <!-- Project Grid -->
+    <div class="w3-row-padding w3-topbar w3-light-grey w3-padding-16">
 
-  <div class="w3-third w3-container w3-margin-bottom">
-    <img src="MotorControlSubHardware.jpg" alt="AGV Motor Control Subsystem" style="width:100%" class="w3-hover-opacity">
-    <div class="w3-container w3-white">
-      <p><b>AGV Motor Control Subsystem</b></p>
-      <p>Short description of the AGV motor control project.</p>
-    </div>
+    <a href="agv-motor-control.html" class="project-link">
+      <div class="w3-third w3-container w3-margin-bottom project-card">
+        <img src="MotorControlSubHardware.jpg" alt="AGV Motor Control Subsystem" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p><b>AGV Motor Control Subsystem</b></p>
+          <p>Designed and implemented a real-time motor control subsystem for a differential-drive autonomous ground vehicle.</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="audio-equalizer.html" class="project-link">
+      <div class="w3-third w3-container w3-margin-bottom project-card">
+        <img src="3_Band_AudioEQ.jpg" alt="3-Band Audio Equalizer" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p><b>3-Band Audio Equalizer</b></p>
+          <p>Simulated, built, and evaluated an active-filter-based equalizer for bass, midrange, and treble control.</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="drive-with-pid.html" class="project-link">
+      <div class="w3-third w3-container project-card">
+        <img src="DriveWithPID_Control.JPG" alt="Drive With PID" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p><b>Drive With PID</b></p>
+          <p>Implemented PID control on a mobile robot to reduce heading deviation using wheel rotation feedback.</p>
+        </div>
+      </div>
+    </a>
+
   </div>
 
-  <div class="w3-third w3-container w3-margin-bottom">
-    <img src="3_Band_AudioEQ.jpg" alt="3-Band Audio Equalizer" style="width:100%" class="w3-hover-opacity">
-    <div class="w3-container w3-white">
-      <p><b>3-Band Audio Equalizer</b></p>
-      <p>Short description of the audio equalizer project.</p>
-    </div>
-  </div>
-
-  <div class="w3-third w3-container">
-    <img src="DriveWithPID_Control.JPG" alt="Drive With PID" style="width:100%" class="w3-hover-opacity">
-    <div class="w3-container w3-white">
-      <p><b>Drive With PID</b></p>
-      <p>Short description of the PID drive project.</p>
-    </div>
-  </div>
-
-</div>
-  
-
+  <!-- About Me Section -->
   <div class="w3-row-padding w3-padding-16 w3-topbar w3-light-grey" style="margin-bottom:32px" id="about">
+
+    <!-- Top Left: About / Education / Coursework -->
     <div class="w3-col l6 w3-padding-large">
       <h2><b>About Me</b></h2>
-        <p>
-          <button class="w3-button w3-blue-grey w3-padding">
-            <a href="" download="Gianlorenzo_Cavallo_Resume_26.pdf">
-              <i class="fa fa-download w3-margin-right"></i>Download Resume
-            </a>
-          </button>
-        </p>
+
+      <p>
+        <button class="w3-button w3-blue-grey w3-padding">
+          <a href="Cavallo_Resume_26.pdf" download="Gianlorenzo_Cavallo_Resume_26.pdf">
+            <i class="fa fa-download w3-margin-right"></i>Download Resume
+          </a>
+        </button>
+      </p>
+
       <br>
 
       <h3>Education</h3>
@@ -143,7 +251,7 @@
 
       <br>
 
-      <h3>Relevant Coursework:</h3>
+      <h3>Relevant Coursework</h3>
       <p>Circuits I & II</p>
       <p>Digital Logic</p>
       <p>Signals and Systems</p>
@@ -155,129 +263,145 @@
       <p>Digital Signal Processing</p>
       <p>Senior Design I & II</p>
       <p>Technical Writing</p>
+    </div>
 
-      <br>
+    <!-- Top Right: Image Slideshow -->
+    <div class="w3-col l6 w3-padding-large">
+      <div class="slideshow-container">
 
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 2</div>
+          <img src="office_working.JPG" style="width:100%" class="w3-round-xlarge">
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 2</div>
+          <img src="plane_selfie.JPG" style="width:100%" class="w3-round-xlarge">
+        </div>
+
+        <br>
+
+        <div style="text-align:center">
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Left: Skills -->
+    <div class="w3-col l6 w3-padding-large">
+      <h3>Skills</h3>
+      <p><b>Hardware:</b> Digital Multimeter, Oscilloscope, Function Generator, Arduino and ARM MCUs, Raspberry Pi</p>
+      <p><b>Software and Simulation Tools:</b> MATLAB, Simulink, KiCad, LTSpice, Python, C++, Embedded C, ROS 2, PyTorch, Git, Bash</p>
+      <p><b>Interfaces and Protocols:</b> UART, I2C, SPI, SCI, USB, GPIO, Ethernet, Quadrature Encoder Interface (QEI)</p>
+    </div>
+
+    <!-- Bottom Right: Hobbies -->
+    <div class="w3-col l6 w3-padding-large">
       <h3>Hobbies</h3>
-      <p>Outside of work, you'll find me tinkering with my fully custom 3D printer, flying FPV drones, or taking photos of the world. My love for anything that flies led me to building my first fixed-wing drones when I was 7, and I was able to pursue that interest all the way to this day through clubs, personal projects, and other fun things! I still fly drones to this day, although I've switched to mainly multirotors, which has helped me get into aerial videography. </p>
-      <br>
-    </div>
-
-  <!-- Images of Me -->
-  <div class="w3-col l6 w3-padding-large">
-  <div class="slideshow-container">
-
-    <div class="mySlides fade">
-      <div class="numbertext">1 / 2</div>
-      <img src="office_working.JPG" style="width:100%" class="w3-round-xlarge">
-    </div>
-
-    <div class="mySlides fade">
-      <div class="numbertext">2 / 2</div>
-      <img src="plane_selfie.JPG" style="width:100%" class="w3-round-xlarge">
-    </div>
-
-    <br>
-
-    <div style="text-align:center">
-      <span class="dot"></span>
-      <span class="dot"></span>
+      <p>
+        Outside of engineering, I am a flight simulator enthusiast who enjoys exploring the virtual skies in Microsoft Flight Simulator 2024. I also enjoy flying my DJI Air 2S drone in nature whenever I want to disconnect. In addition, I like playing electric guitar and cultivating a vegetable garden, both of which give me a healthy balance to my technical work!
+      </p>
     </div>
 
   </div>
-</div>
 
-</div>
-
-
-    
-  
   <!-- Contact Section -->
   <div class="w3-container w3-padding-large w3-grey">
     <h4 id="contact"><b>Contact Me</b></h4>
+
     <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
-      <div class="w3-third w3-dark-grey">
+      <div class="w3-half w3-dark-grey">
         <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
-        <p>cavallgi@udmercy.edu</p>
+        <p>
+          <a href="mailto:cavallgi@udmercy.edu" class="email-link">
+            cavallgi@udmercy.edu
+          </a>
+        </p>
       </div>
-      <div class="w3-third w3-teal">
+
+      <div class="w3-half w3-teal">
         <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
         <p>Grosse Pointe Woods, MI, USA</p>
       </div>
     </div>
-    <hr class="w3-opacity">
-    <form action="/action_page.php" target="_blank">
-      <div class="w3-section">
-        <label>Name</label>
-        <input class="w3-input w3-border" type="text" name="Name" required>
-      </div>
-      <div class="w3-section">
-        <label>Email</label>
-        <input class="w3-input w3-border" type="text" name="Email" required>
-      </div>
-      <div class="w3-section">
-        <label>Message</label>
-        <input class="w3-input w3-border" type="text" name="Message" required>
-      </div>
-      <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Send Message</button>
-    </form>
   </div>
 
   <!-- Footer -->
   <footer class="w3-container w3-padding-32 w3-dark-grey">
-  <div class="w3-row-padding">
-    <div class="w3-third">
-      <h3>ABOUT THIS WEBSITE</h3>
-      <p>Gianlorenzo Cavallo's Career Portfolio.</p>
-      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    <div class="w3-row-padding">
+      <div class="w3-third">
+        <h3>ABOUT THIS WEBSITE</h3>
+        <p>&copy; 2026 Gianlorenzo Cavallo. All rights reserved.</p>
+      </div>
     </div>
-  </div>
   </footer>
-  
-  <div class="w3-black w3-center w3-padding-24">Made with <a href="https://www.w3schools.com/spaces" title="spaces" target="_blank" class="w3-hover-opacity">W3Schools Spaces</a></div>
+
+  <!-- Bottom Black Bar -->
+  <div class="w3-black w3-center w3-padding-24">
+    Built with <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-opacity">W3.CSS</a> and hosted on GitHub Pages.
+  </div>
 
 <!-- End page content -->
 </div>
 
 <script>
-// Script to open and close sidebar
-function w3_open() {
+  function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
+  }
+
+  function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("myOverlay").style.display = "none";
-}
-
-let slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
   }
 
-  slideIndex++;
-
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
+  function applyDarkModePreference() {
+    if (localStorage.getItem("darkMode") === "enabled") {
+      document.body.classList.add("dark-mode");
+    }
   }
 
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("darkMode", "enabled");
+    } else {
+      localStorage.setItem("darkMode", "disabled");
+    }
   }
 
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
+  applyDarkModePreference();
 
-  setTimeout(showSlides, 6000);
-}
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    slideIndex++;
+
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+
+    setTimeout(showSlides, 6000);
+  }
 </script>
 
 </body>
